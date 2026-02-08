@@ -1,0 +1,410 @@
+/* Custom CSS para complementar Bootstrap 5 */
+
+/* Variables de color personalizadas */
+:root {
+    --primary-gradient: linear-gradient(135deg, #0d6efd 0%, #0056b3 100%);
+    --bs-primary-rgb: 13, 110, 253;
+}
+
+/* Estilos base */
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: var(--primary-gradient);
+    min-height: 100vh;
+}
+
+/* Gradientes personalizados */
+.bg-primary {
+    background: var(--primary-gradient) !important;
+}
+
+.bg-gradient {
+    background: var(--primary-gradient) !important;
+}
+
+/* Header personalizado */
+header {
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.95) !important;
+}
+
+.logo-icon {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s ease;
+}
+
+.logo-icon:hover {
+    transform: scale(1.05);
+}
+
+/* Card personalizado */
+.card {
+    border: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+}
+
+.card-header {
+    border: none;
+}
+
+/* Formularios */
+.form-control, .form-select {
+    border: 2px solid #e2e8f0;
+    transition: all 0.3s ease;
+    background: #f8fafc;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: var(--bs-primary);
+    background: white;
+    box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
+}
+
+.form-control.is-valid, .form-select.is-valid {
+    border-color: #198754;
+    background-image: none;
+}
+
+.form-control.is-invalid, .form-select.is-invalid {
+    border-color: #dc3545;
+    background-image: none;
+}
+
+/* Botones */
+.btn-primary {
+    background: var(--primary-gradient);
+    border: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+    background: var(--primary-gradient);
+}
+
+.btn-primary:focus {
+    box-shadow: 0 0 0 0.25rem rgba(102, 126, 234, 0.25);
+}
+
+/* Tarjetas de información */
+.card.border-0.shadow-sm {
+    transition: all 0.3s ease;
+}
+
+.card.border-0.shadow-sm:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Iconos de información */
+.bg-primary.bg-gradient.rounded-3 {
+    transition: transform 0.3s ease;
+}
+
+.card:hover .bg-primary.bg-gradient.rounded-3 {
+    transform: scale(1.1);
+}
+
+/* Footer */
+footer {
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.95) !important;
+}
+
+/* Animaciones */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in-up {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+/* Estados de carga */
+.btn.loading {
+    position: relative;
+    pointer-events: none;
+}
+
+.btn.loading::after {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    margin: auto;
+    border: 2px solid transparent;
+    border-top: 2px solid #fff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Alertas personalizadas */
+.alert-custom {
+    border: none;
+    border-radius: 0.5rem;
+    padding: 1rem 1.5rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    animation: slideInDown 0.3s ease-out;
+}
+
+.alert-success-custom {
+    background: linear-gradient(135deg, #48bb78, #38a169);
+    color: white;
+}
+
+.alert-error-custom {
+    background: linear-gradient(135deg, #f56565, #e53e3e);
+    color: white;
+}
+
+@keyframes slideInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Flatpickr Custom Styles */
+.flatpickr-calendar {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    border: 1px solid var(--border-color);
+}
+
+.flatpickr-day {
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+
+.flatpickr-day:hover {
+    background: var(--bg-light);
+    transform: scale(1.05);
+}
+
+.flatpickr-day.selected {
+    background: var(--primary-gradient) !important;
+    color: white !important;
+    border-color: transparent !important;
+}
+
+.flatpickr-day.today {
+    border-color: var(--accent-color) !important;
+    font-weight: 600;
+}
+
+.flatpickr-day.disabled {
+    color: #cbd5e0 !important;
+    background: #f7fafc !important;
+    cursor: not-allowed !important;
+    opacity: 0.6 !important;
+    text-decoration: line-through !important;
+}
+
+.flatpickr-day.disabled:hover {
+    background: #f7fafc !important;
+    transform: none !important;
+}
+
+.flatpickr-day.prevMonthDay,
+.flatpickr-day.nextMonthDay {
+    color: #e2e8f0 !important;
+}
+
+.flatpickr-months {
+    margin-bottom: 10px;
+}
+
+.flatpickr-month {
+    margin: 0 10px;
+}
+
+.flatpickr-current-month {
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.flatpickr-weekday {
+    color: var(--text-light);
+    font-weight: 500;
+    font-size: 0.875rem;
+}
+
+.flatpickr-time {
+    border-top: 1px solid var(--border-color);
+}
+
+.flatpickr-time input {
+    font-weight: 500;
+    color: var(--text-dark);
+}
+
+.flatpickr-time input:hover,
+.flatpickr-time input:focus {
+    background: var(--bg-light);
+}
+
+/* Floating WhatsApp Button */
+.whatsapp-float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #25d366;
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    text-decoration: none;
+    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 25px rgba(37, 211, 102, 0.5);
+    color: white;
+}
+
+/* Map Section */
+.map-section {
+    background: var(--bg-light);
+}
+
+.map-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 0 0 12px 12px;
+}
+
+.map-container iframe {
+    display: block;
+    width: 100%;
+    height: 450px;
+    border: none;
+}
+
+/* Responsive adicional */
+@media (max-width: 768px) {
+    .card-header {
+        padding: 1.5rem 1rem !important;
+    }
+    
+    .card-header h1 {
+        font-size: 1.75rem !important;
+    }
+    
+    .p-lg-5 {
+        padding: 1.5rem !important;
+    }
+    
+    .col-lg-7, .col-lg-5 {
+        border: none !important;
+    }
+    
+    .col-lg-5 {
+        background: #f8fafc !important;
+        border-top: 1px solid #e2e8f0 !important;
+        padding-top: 1.5rem !important;
+    }
+    
+    .map-container iframe {
+        height: 350px;
+    }
+    
+    .whatsapp-float {
+        bottom: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+        font-size: 1.25rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .display-5 {
+        font-size: 1.5rem !important;
+    }
+    
+    .btn-lg {
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
+    }
+    
+    .card-body {
+        padding: 1rem !important;
+    }
+    
+    .map-container iframe {
+        height: 300px;
+    }
+    
+    .whatsapp-float {
+        bottom: 15px;
+        right: 15px;
+        width: 45px;
+        height: 45px;
+        font-size: 1.1rem;
+    }
+}
+
+/* Accesibilidad */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* Focus visible para mejor accesibilidad */
+.btn-primary:focus-visible,
+.form-control:focus-visible,
+.form-select:focus-visible {
+    outline: 2px solid var(--bs-primary);
+    outline-offset: 2px;
+}
+
+/* Transiciones suaves */
+* {
+    transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+}
